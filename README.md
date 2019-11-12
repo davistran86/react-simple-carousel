@@ -10,7 +10,7 @@ https://www.npmjs.com/package/@davistran86/carousel
 
 ## Demo
 
-Comming soon...
+Please visit: https://davistran86.github.io/react-simple-carousel/
 
 ## Installation
 
