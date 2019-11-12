@@ -1,6 +1,6 @@
 # Simple Carousel
 
-![](https://i.imgur.com/Om8m2Py.jpg)
+![](https://i.imgur.com/IqneWJy.jpg)
 
 A simple react carousel with infinite loop 🎉
 
@@ -64,36 +64,45 @@ ReactDOM.render(<App />, rootElement);
 
 There are 2 effects can be used: slide, fade.
 
-| Option | Type   | Default | Value      | Info                                  |
-| ------ | ------ | ------- | ---------- | ------------------------------------- |
-| effect | string | slide   | slide,fade | Effect showing when go to other slide |
-
 ```javascript
 <Carousel effect="fade">...</Carousel>
 ```
 
-### Speed
+| Option | Type   | Default | Value      | Info                                  |
+| ------ | ------ | ------- | ---------- | ------------------------------------- |
+| effect | string | slide   | slide,fade | Effect showing when go to other slide |
 
-| Option | Type   | Default | Info                                                                     |
-| ------ | ------ | ------- | ------------------------------------------------------------------------ |
-| speed  | number | 250     | Changing slide speed. Default 250 means 250ms or 0.25s (Animation speed) |
+### Speed
 
 ```javascript
 <Carousel speed={500}>...</Carousel>
 ```
 
-### Width & Height
+| Option | Type   | Default | Info                                                                     |
+| ------ | ------ | ------- | ------------------------------------------------------------------------ |
+| speed  | number | 250     | Changing slide speed. Default 250 means 250ms or 0.25s (Animation speed) |
 
-| Option | Type   | Default | Info                                                              |
-| ------ | ------ | ------- | ----------------------------------------------------------------- |
-| width  | string | 100%    | Carousel width. Support any value can be used with width in css   |
-| height | string | 100%    | Carousel height. Support any value can be used with height in css |
+### Width & height
 
 ```javascript
 <Carousel width="800px" height="600px">
   ...
 </Carousel>
 ```
+
+| Option | Type   | Default | Info                                                              |
+| ------ | ------ | ------- | ----------------------------------------------------------------- |
+| width  | string | 100%    | Carousel width. Support any value can be used with width in css   |
+| height | string | 100%    | Carousel height. Support any value can be used with height in css |
+
+### Fit width & height
+
+Show content in full width or full height. In default, the content will be showed in full height.
+
+| Option    | Type    | Default | Info        |
+| --------- | ------- | ------- | ----------- |
+| fitWidth  | boolean | false   | Full width  |
+| fitHeight | boolean | true    | Full height |
 
 ### Background
 
@@ -103,27 +112,19 @@ There are 2 effects can be used: slide, fade.
 
 ### Autoplay
 
-| Option           | Type    | Default | Info                                                                   |
-| ---------------- | ------- | ------- | ---------------------------------------------------------------------- |
-| autoplay         | boolean | false   | Auto go to next slide                                                  |
-| delay            | number  | 5000    | Waiting time before go to next slide\. Default 5000 means 5000ms or 5s |
-| pauseOnMouseOver | boolean | false   | Pause autoplay when mouse over the Carousel                            |
-
 ```javascript
 <Carousel autoplay={true} pauseOnMouseOver={true} delay={3000}>
   ...
 </Carousel>
 ```
 
-### Controller
+| Option           | Type    | Default | Info                                                                   |
+| ---------------- | ------- | ------- | ---------------------------------------------------------------------- |
+| autoplay         | boolean | false   | Auto go to next slide                                                  |
+| delay            | number  | 5000    | Waiting time before go to next slide\. Default 5000 means 5000ms or 5s |
+| pauseOnMouseOver | boolean | false   | Pause autoplay when mouse over the Carousel                            |
 
-| Option         | Type    | Default | Value          | Info                                                        |
-| -------------- | ------- | ------- | -------------- | ----------------------------------------------------------- |
-| useArrowKey    | boolean | false   | true,false     | Use arrow key to move to next or previous slide             |
-| useMouseWheel  | boolean | false   | true,false     | Use mouse wheel to move to next or previous slide           |
-| hideController | boolean | false   | true,false     | Hide next and previous button                               |
-| buttonColor    | string  | \#000   | any            | Support any value can be used with color in css             |
-| buttonPosition | string  | inside  | inside,outside | Next and previous button are inside or outside the carousel |
+### Controller
 
 ```javascript
 <Carousel
@@ -137,15 +138,33 @@ There are 2 effects can be used: slide, fade.
 </Carousel>
 ```
 
+| Option         | Type    | Default | Value          | Info                                                        |
+| -------------- | ------- | ------- | -------------- | ----------------------------------------------------------- |
+| useArrowKey    | boolean | false   | true,false     | Use arrow key to move to next or previous slide             |
+| useMouseWheel  | boolean | false   | true,false     | Use mouse wheel to move to next or previous slide           |
+| hideController | boolean | false   | true,false     | Hide next and previous button                               |
+| buttonColor    | string  | \#000   | any            | Support any value can be used with color in css             |
+| buttonPosition | string  | inside  | inside,outside | Next and previous button are inside or outside the carousel |
+
 ### Indicators
+
+```javascript
+<Carousel hideIndicators={true} indicatorsColor="red">
+  ...
+</Carousel>
+```
 
 | Option          | Type    | Default | Value      | Info                                            |
 | --------------- | ------- | ------- | ---------- | ----------------------------------------------- |
 | hideIndicators  | boolean | false   | true,false | Hide the indicators                             |
 | indicatorsColor | string  | \#000   | any        | Support any value can be used with color in css |
 
-```javascript
-<Carousel hideIndicators={true} indicatorsColor="red">
-  ...
-</Carousel>
+## Other react components
+
+Checkout my other react components:
+
+### Notification
+
+```
+https://www.npmjs.com/package/@davistran86/notification
 ```

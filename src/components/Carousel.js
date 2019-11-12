@@ -20,6 +20,9 @@ const Carousel = props => {
   const indicators = useRef();
   const controller = useRef();
 
+  let fitWidth = props.fitWidth || false;
+  let fitHeight = props.fitHeight || true;
+
   let autoplay = props.autoplay || false;
   let pauseOnMouseOver = props.pauseOnMouseOver || false;
   let pause = useRef(false);
@@ -199,7 +202,13 @@ const Carousel = props => {
         <CarouselBody data-name="carousel-body" ref={carousel} effect={effect}>
           {React.Children.map(props.children, (item, index) => {
             return (
-              <Item key={index} effect={effect} background={props.background}>
+              <Item
+                key={index}
+                effect={effect}
+                background={props.background}
+                fitWidth={fitWidth}
+                fitHeight={fitHeight}
+              >
                 {item}
               </Item>
             );

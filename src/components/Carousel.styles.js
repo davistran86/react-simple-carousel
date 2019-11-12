@@ -83,7 +83,8 @@ export const Item = styled.div`
   align-items: center;
 
   & > * {
-    height: 100%;
+    width: ${props => (props.fitWidth ? "100%" : "unset")};
+    height: ${props => (props.fitHeight ? "100%" : "unset")};
     object-fit: cover;
   }
 `;
@@ -96,7 +97,7 @@ export const ButtonLeft = styled.button`
   padding: 0.5rem;
   height: 100%;
   top: 0;
-  left: ${props => (props.buttonPosition === "outside" ? "-5%" : "0")};
+  left: ${props => (props.buttonPosition === "outside" ? "-5%" : "5%")};
   transform: ${props =>
     props.buttonPosition === "outside" ? "translateX(-100%)" : "translateX(0)"};
   cursor: pointer;
@@ -118,7 +119,7 @@ export const ButtonRight = styled.button`
   padding: 0.5rem;
   height: 100%;
   top: 0;
-  right: ${props => (props.buttonPosition === "outside" ? "-5%" : "0")};
+  right: ${props => (props.buttonPosition === "outside" ? "-5%" : "5%")};
   transform: ${props =>
     props.buttonPosition === "outside" ? "translateX(100%)" : "translateX(0)"};
   cursor: pointer;
