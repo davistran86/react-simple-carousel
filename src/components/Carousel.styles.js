@@ -83,7 +83,7 @@ export const Item = styled.div`
   align-items: center;
 
   & > * {
-    /* height: 100%; */
+    height: 100%;
     object-fit: cover;
   }
 `;

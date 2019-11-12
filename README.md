@@ -1,6 +1,12 @@
-# SIMPLE CAROUSEL
+# Simple Carousel
+
+![](https://i.imgur.com/Om8m2Py.jpg)
 
 A simple react carousel with infinite loop 🎉
+
+```
+https://www.npmjs.com/package/@davistran86/carousel
+```
 
 ## Demo
 
