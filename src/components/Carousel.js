@@ -21,6 +21,8 @@ const Carousel = props => {
   const controller = useRef();
 
   let autoplay = props.autoplay || false;
+  let pauseOnMouseOver = props.pauseOnMouseOver || false;
+  let pause = useRef(false);
   let delay = props.delay || 5000;
   let speed = props.speed || 250;
   let useArrowKey = props.useArrowKey || false;
@@ -35,17 +37,31 @@ const Carousel = props => {
     let _carousel = carousel.current;
     let _controller = controller.current;
     let _indicators = indicators.current;
+
     setIndicator(indicators, 0);
     hideController && (_controller.style.visibility = "hidden");
     itemCount <= 1 && (_controller.style.visibility = "hidden");
     hideIndicators && (_indicators.style.visibility = "hidden");
+
+    // Autoplay
     autoplay && autoToNextSlide();
+    if (autoplay && pauseOnMouseOver) {
+      _carousel.addEventListener("mouseenter", () => {
+        pause.current = true;
+      });
+      _carousel.addEventListener("mouseleave", () => {
+        pause.current = false;
+      });
+    }
+
+    // Workaround for fade effect with position absolute
     effect === "fade" &&
       _carousel.insertBefore(
         _carousel.firstChild,
         _carousel.lastChild.nextSibling
       );
 
+    // Enable navigation with arrow key
     if (useArrowKey) {
       _carousel.addEventListener("mouseenter", () => {
         window.addEventListener("keydown", handleArrowKey);
@@ -63,6 +79,14 @@ const Carousel = props => {
         });
         _carousel.removeEventListener("mouseleave", () => {
           window.removeEventListener("keydown", handleArrowKey);
+        });
+      }
+      if (autoplay && pauseOnMouseOver) {
+        _carousel.removeEventListener("mouseenter", () => {
+          pause.current = true;
+        });
+        _carousel.removeEventListener("mouseleave", () => {
+          pause.current = false;
         });
       }
     };
@@ -105,13 +129,9 @@ const Carousel = props => {
 
   const autoToNextSlide = () => {
     setInterval(() => {
-      currentSlide === carousel.current.children.length - 1
-        ? (currentSlide = 0)
-        : currentSlide++;
-      effect === "fade"
-        ? fadeNext(carousel, speed)
-        : slideNext(carousel, speed);
-      setIndicator(indicators, currentSlide);
+      if (!pause.current) {
+        handleEffects(effect, "next");
+      }
     }, delay);
   };
 

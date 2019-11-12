@@ -1,7 +1,7 @@
 {
   "name": "@davistran86/carousel",
-  "version": "1.0.0",
-  "description": "Simple react carousel with fade and slide effect, key and mouse wheel navigation support",
+  "version": "1.0.1",
+  "description": "A simple react carousel with infinite loop, fade and slide effect, key and mouse wheel navigation support 🎉",
   "private": false,
   "keywords": [
     "react",
