@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5aa5f32d3de401b56ce85698741729a9",
+    "revision": "fe885f58a2d2fe2d0394c4971fdfaae0",
     "url": "/react-simple-carousel/index.html"
   },
   {
-    "revision": "4ea704553b3f4f0bd12d",
+    "revision": "cf8ce75ac3a19a0a23ad",
     "url": "/react-simple-carousel/static/css/main.99a9b9c0.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-simple-carousel/static/js/2.756dbee1.chunk.js"
   },
   {
-    "revision": "4ea704553b3f4f0bd12d",
-    "url": "/react-simple-carousel/static/js/main.9e048da3.chunk.js"
+    "revision": "cf8ce75ac3a19a0a23ad",
+    "url": "/react-simple-carousel/static/js/main.aedc4bcb.chunk.js"
   },
   {
     "revision": "9a8cdbcdf30bdb69606b",
